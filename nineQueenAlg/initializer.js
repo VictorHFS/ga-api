@@ -15,7 +15,14 @@ var generateNineQueenGenes = function() {
 	n = 8;
 	while(n>0) {
 		--n;
-		genes.push(generateGene());
+		var new_gene = generateGene();
+		genes.forEach(gene => { 
+			if (gene.x === new_gene.x && 
+				gene.y === new_gene.y) {
+				n++;
+				break;
+			}})
+		genes.push(gene);
 	}
 	return genes;
 }

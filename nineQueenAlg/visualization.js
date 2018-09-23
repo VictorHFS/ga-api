@@ -1,20 +1,18 @@
-function createTable(genes) {
-	var table = document.createElement('TABLE');
-	genes.forEach(gene => {
-		var row = table.insetRow(gene.x);
-		var cell = row.insertCell(gene.y);
-		cell.innerHTML = gene;
-	})
-	return table
-}
+$(document)
+.ready(function(){
 
-exports.showTable = function(chromosome){
-	var table = createTable(genes);
-	var genes =chromosome.getGenes();
-	$('body').innerHTML(table)
-	return table;
-}
+	function createTable() {
+		var light = true;
+		for (var line = 8; line >= 1; line--) {
+			for (var column = 8; column >= 1; column--) {
+				var color = (light) ? 'light' : 'dark';
+				var id = String(line)+':'+String(column);
+				$('.board').append('<div class="square-board '+color+' id="'+id+'">'+id+'</div>')			
+				light = !light;
+			}
+			light = !light
+		}
+	}
 
-
-var chromo = init.generate()
-var table = this.showTable(chromo);
+	createTable()
+})
