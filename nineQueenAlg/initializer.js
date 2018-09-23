@@ -2,8 +2,8 @@ var gn = require('../core/chromosome')
 var nb = require('../util/number');
 
 function generateGene() {
-	var x = nb.getRandomInt(1,9);
-	var y = nb.getRandomInt(1,9);
+	var x = nb.getRandomInt(0,8);
+	var y = nb.getRandomInt(0,8);
 	return {
 		x:x,
 		y:y
@@ -27,7 +27,3 @@ exports.generate = function() {
 	})
 	return chromo;
 }
-
-
-console.log(this.generate())
-console.log(this.generate().getGenes())

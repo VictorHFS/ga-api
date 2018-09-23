@@ -1,3 +1,0 @@
-exports.criteria = function(chromosome) {
-
-}
